@@ -10,9 +10,49 @@
 
 module.exports = (robot) ->
 
-  # robot.hear /badger/i, (res) ->
-  #   res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
-  #
+  robot.hear /おごり/i, (res) ->
+    res.send "うん、そうだね。楽しみにしとくよ。あんたのおごり"
+
+  robot.hear /お金.*(ない|無い)/i, (res) ->
+    res.send "だったら仕事してください"
+
+  robot.hear /(ゴミ|クズ)/i, (res) ->
+    res.send "そうそう。¥n変な人間ばっかりですよねーこの業界。¥nだらしない、大人げない。どうしようもない。カスゴミ、クズ。¥nだけど基本的にみんな善人だから良いかって"
+
+  robot.hear /(よんだ？|呼んだ？)/i, (res) ->
+    res.send "呼んでない"
+
+  robot.hear /(やばい|ヤバい|失敗)/i, (res) ->
+    rand = Math.floor(Math.random() * 2) + 1
+    if rand is 1
+      res.send "あるある。若さゆえの過ち¥nみんなそんなもんだよ"
+    else
+      res.send "そう。トライアンドエラーって言うけど、日々トライアンドトラブル。¥n…なんてね！流石のアイアン矢野もお疲れ中"
+
+  robot.hear /(尽きた)/i, (res) ->
+    res.send "それはデスクのセリフ。尽きてない！"
+
+  robot.hear /(尽きた)/i, (res) ->
+    res.send "それはデスクのセリフ。尽きてない！"
+
+  robot.hear /(大丈夫？)/i, (res) ->
+    res.send "流石に疲れたよー¥n氷山にぶつからないように船を操縦するのはさぁ…"
+
+  robot.hear /脱稿/i, (res) ->
+    res.send "原稿上がったの？¥nちょっと見ていい？"
+
+  robot.hear /(疲れた|眠い)/i, (res) ->
+    rand = Math.floor(Math.random() * 3) + 1
+    switch rand
+      when 1
+        res.send "あんた、今日は一旦うちに帰りな。¥n今晩あんたがここで粘ってたって何も解決しないから。¥nそれより顔、酷いよ"
+      when 2
+        res.send "最近ちゃんと寝てないでしょ？"
+      else
+        res.send "まぁ、マジメな人ほど、現実のギャップに傷ついたり、絶望したりするからね。元気だしな"
+
+
+
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
   #   if doorType is "pod bay"
