@@ -17,7 +17,10 @@ module.exports = (robot) ->
     res.send "だったら仕事してください"
 
   robot.hear /(ゴミ|クズ)/i, (res) ->
-    res.send "そうそう。¥n変な人間ばっかりですよねーこの業界。¥nだらしない、大人げない。どうしようもない。カスゴミ、クズ。¥nだけど基本的にみんな善人だから良いかって"
+    res.send """そうそう。
+    変な人間ばっかりですよねーこの業界。
+    だらしない、大人げない。どうしようもない。カスゴミ、クズ。
+    だけど基本的にみんな善人だから良いかって"""
 
   robot.hear /(よんだ？|呼んだ？)/i, (res) ->
     res.send "呼んでない"
@@ -32,16 +35,13 @@ module.exports = (robot) ->
   robot.hear /(尽きた)/i, (res) ->
     res.send "それはデスクのセリフ。尽きてない！"
 
-  robot.hear /(尽きた)/i, (res) ->
-    res.send "それはデスクのセリフ。尽きてない！"
-
   robot.hear /(大丈夫？)/i, (res) ->
     res.send "流石に疲れたよー¥n氷山にぶつからないように船を操縦するのはさぁ…"
 
   robot.hear /脱稿/i, (res) ->
     res.send "原稿上がったの？¥nちょっと見ていい？"
 
-  robot.hear /(疲れた|眠い)/i, (res) ->
+  robot.hear /(疲れた|つかれた|眠い|ねむい)/i, (res) ->
     rand = Math.floor(Math.random() * 3) + 1
     switch rand
       when 1
