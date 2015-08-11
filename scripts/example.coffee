@@ -28,24 +28,30 @@ module.exports = (robot) ->
   robot.hear /(やばい|ヤバい|失敗)/i, (res) ->
     rand = Math.floor(Math.random() * 2) + 1
     if rand is 1
-      res.send "あるある。若さゆえの過ち¥nみんなそんなもんだよ"
+      res.send """あるある。若さゆえの過ち
+      みんなそんなもんだよ"""
     else
-      res.send "そう。トライアンドエラーって言うけど、日々トライアンドトラブル。¥n…なんてね！流石のアイアン矢野もお疲れ中"
+      res.send """そう。トライアンドエラーって言うけど、日々トライアンドトラブル。
+      …なんてね！流石のアイアン矢野もお疲れ中"""
 
   robot.hear /(尽きた)/i, (res) ->
     res.send "それはデスクのセリフ。尽きてない！"
 
   robot.hear /(大丈夫？)/i, (res) ->
-    res.send "流石に疲れたよー¥n氷山にぶつからないように船を操縦するのはさぁ…"
+    res.send """流石に疲れたよー
+    氷山にぶつからないように船を操縦するのはさぁ…"""
 
   robot.hear /脱稿/i, (res) ->
-    res.send "原稿上がったの？¥nちょっと見ていい？"
+    res.send """原稿上がったの？
+    ちょっと見ていい？"""
 
   robot.hear /(疲れた|つかれた|眠い|ねむい)/i, (res) ->
     rand = Math.floor(Math.random() * 3) + 1
     switch rand
       when 1
-        res.send "あんた、今日は一旦うちに帰りな。¥n今晩あんたがここで粘ってたって何も解決しないから。¥nそれより顔、酷いよ"
+        res.send """あんた、今日は一旦うちに帰りな。
+        今晩あんたがここで粘ってたって何も解決しないから。
+        それより顔、酷いよ"""
       when 2
         res.send "最近ちゃんと寝てないでしょ？"
       else
