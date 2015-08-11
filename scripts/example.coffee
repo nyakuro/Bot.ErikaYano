@@ -57,7 +57,11 @@ module.exports = (robot) ->
       else
         res.send "まぁ、マジメな人ほど、現実のギャップに傷ついたり、絶望したりするからね。元気だしな"
 
-
+###
+# respond
+###
+  robot.respond /(*)/i, (res) ->
+    res.reply "{res.match[1]}"
 
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
